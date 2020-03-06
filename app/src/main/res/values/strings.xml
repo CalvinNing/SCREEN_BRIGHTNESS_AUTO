@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SCREEN_BRIGHTNESS</string>
+    <string name="my_default_tile_label">自动亮度</string>
+</resources>
