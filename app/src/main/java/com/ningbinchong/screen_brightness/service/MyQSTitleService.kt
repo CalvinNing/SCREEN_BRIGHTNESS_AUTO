@@ -1,7 +1,5 @@
 package com.ningbinchong.screen_brightness.service
 
-import android.content.Intent
-import android.os.IBinder
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
