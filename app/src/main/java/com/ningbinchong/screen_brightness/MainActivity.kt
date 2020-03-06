@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (!Settings.System.canWrite(this)) {
             val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
-            startActivityForResult(intent,REQUEST_CODE_WRITE_SETTINGS)
+            intent.data = Uri.parse("package:" + getPackageName())
+            startActivityForResult(intent, REQUEST_CODE_WRITE_SETTINGS)
         }
     }
 }
