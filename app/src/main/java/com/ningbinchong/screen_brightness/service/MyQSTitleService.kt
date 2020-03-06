@@ -62,19 +62,23 @@ class MyQSTitleService : TileService() {
     }
 
     fun openAutoScreenBrightness() {
-        Settings.System.putInt(
-            contentResolver,
-            Settings.System.SCREEN_BRIGHTNESS_MODE,
-            Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
-        )
+        if (Settings.System.canWrite(this)) {
+            Settings.System.putInt(
+                contentResolver,
+                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
+            )
+        }
     }
 
     fun closeAutoScreenBrightness() {
-        Settings.System.putInt(
-            contentResolver,
-            Settings.System.SCREEN_BRIGHTNESS_MODE,
-            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL
-        )
+        if (Settings.System.canWrite(this)) {
+            Settings.System.putInt(
+                contentResolver,
+                Settings.System.SCREEN_BRIGHTNESS_MODE,
+                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL
+            )
+        }
     }
 
 }
